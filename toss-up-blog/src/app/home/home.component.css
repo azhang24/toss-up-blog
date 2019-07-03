@@ -1,0 +1,11 @@
+.container{
+    padding: 20px 20px 20px 20px;
+}
+
+#blogsHeader{
+    text-decoration: underline;
+}
+
+.blogsContainer{
+    margin-top: 10px;
+}

@@ -1,0 +1,11 @@
+<div class="container">
+    <h1 class="ui header">Welcome to the Toss Up Blog!</h1>
+    <h3 class="ui header" id="blogsHeader">Your Blogs</h3>
+    <div class="blogsContainer" style="width: 700px; border-top-style: dashed;" *ngFor="let blog of blogs">
+        <p><b>{{blog.title}}</b></p>
+        <p>{{blog.body}}</p>
+    </div>
+</div>
+
+
+
