@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Blog } from '../blog';
+import { Blog } from '../models/blog';
+import { News } from '../models/news';
+import { NewsService } from '../services/news.service';
+import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +13,9 @@ export class HomeComponent implements OnInit {
 
   blogs: Blog[];
 
-  constructor() { 
+  newsArticles: News[];
+
+  constructor(private newsService: NewsService) { 
 
     //temporary
     this.blogs = [
@@ -75,10 +80,26 @@ export class HomeComponent implements OnInit {
               + 'people to sleep, especially during lunch. '
       }
     ]
+    
+    this.newsArticles = [];
 
   }
 
   ngOnInit() {
+    this.getUSNews();
+  }
+
+  getUSNews(){
+    this.newsService.getTrendingNewsByCountry('us').subscribe((res: any) => {
+      for(let i = 0; i < res.articles.length; i++){
+        let article = res.articles[i];
+        this.newsArticles.push({
+          title: article.title,
+          source: article.source.name,
+          url: article.url
+        });
+      }
+    })
   }
 
 }

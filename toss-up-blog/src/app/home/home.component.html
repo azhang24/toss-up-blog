@@ -1,9 +1,19 @@
 <div class="container">
     <h1 class="ui header">Welcome to the Toss Up Blog!</h1>
     <h3 class="ui header" id="blogsHeader">Your Blogs</h3>
-    <div class="blogsContainer" style="width: 700px; border-top-style: dashed;" *ngFor="let blog of blogs">
-        <p><b>{{blog.title}}</b></p>
-        <p>{{blog.body}}</p>
+    <div class="ui two column grid">
+        <div class="ten wide column">
+            <div class="blogsContainer" *ngFor="let blog of blogs">
+                <p><b>{{blog.title}}</b></p>
+                <p>{{blog.body}}</p>
+            </div>
+        </div>
+        <div class="six wide column" style="border-style: dashed; border-color: red; height: 400px;">
+            <h4 class="ui header">Trending US News</h4>
+            <div class="newsContainer" *ngFor="let news of newsArticles | slice:0:5; let i=index">
+                <p><span>{{i+1}}</span>. {{news.title}}</p>
+            </div>
+        </div>
     </div>
 </div>
 
