@@ -24,8 +24,20 @@ export class TrendingNewsComponent implements OnInit {
     $('.ui.selection.dropdown').dropdown();
     this.newsService.getAllSources().subscribe((res: any) => {
       this.sources = res.sources;
-      console.log(this.sources)
+      console.log(this.sources);
     });
+  }
+
+  searchForTrendingNews(){
+    let query = (<HTMLInputElement>document.getElementById('query')).value;
+    let country = $('.ui.search.selection.dropdown.country').dropdown('get value');
+    let category = $('.ui.selection.dropdown.category').dropdown('get value');
+    let source = $('.ui.search.selection.dropdown.source').dropdown('get value');
+    
+    this.newsService.searchForTrendingNews(query, country, category, source).subscribe((res) => {
+      console.log(res);
+    })
+
   }
 
 }

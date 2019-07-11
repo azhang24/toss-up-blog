@@ -3,14 +3,14 @@
     <div class="two wide column"></div>
     <div class="twelve wide column">
         <div class="ui search" >
-            <div class="ui icon input" style="width: 1000px;">
-                <input class="prompt" type="text" placeholder="Search for Trending News">
+            <div class="ui icon input" style="width: 1200px;">
+                <input class="prompt" type="text" id="query" placeholder="Search for Trending News">
                 <i class="search icon"></i>
             </div>
             <div class="results"></div>
         </div>
-        <div class="options" style="display: flex; text-align: center;">
-            <div class="ui search selection dropdown" >
+        <div class="options" style="display: flex; ">
+            <div class="ui search selection dropdown country">
                 <input type="hidden" name="country">
                 <i class="dropdown icon"></i>
                 <div class="default text">Select Country</div>
@@ -73,22 +73,22 @@
 
                 </div>
             </div>
-            <div class="ui selection dropdown">
+            <div class="ui selection dropdown category">
                 <input type="hidden" name="category">
                 <i class="dropdown icon"></i>
                 <div class="default text">Select Category</div>
                 <div class="menu">
-                    <div class="item" data-value="0">General</div>
-                    <div class="item" data-value="1">Technology</div>
-                    <div class="item" data-value="2">Business</div>
-                    <div class="item" data-value="3">Sports</div>
-                    <div class="item" data-value="4">Entertainment</div>
-                    <div class="item" data-value="5">Health</div>
-                    <div class="item" data-value="6">Science</div>
+                    <div class="item" data-value="general">General</div>
+                    <div class="item" data-value="technology">Technology</div>
+                    <div class="item" data-value="business">Business</div>
+                    <div class="item" data-value="sports">Sports</div>
+                    <div class="item" data-value="entertainment">Entertainment</div>
+                    <div class="item" data-value="health">Health</div>
+                    <div class="item" data-value="science">Science</div>
                 </div>
             </div>
 
-            <div class="ui search selection dropdown" >
+            <div class="ui search selection dropdown source" >
                 <input type="hidden" name="source">
                 <i class="dropdown icon"></i>
                 <div class="default text">Select Source</div>
@@ -99,11 +99,17 @@
                 </div>
             </div>
 
-            <button class="ui primary button">Search</button>
+            <button class="ui primary button" (click)="searchForTrendingNews()">Search</button>
         </div>
     </div>
     <div class="two wide column"></div>
     
+</div>
+
+<div class="ui grid" id="newsContainer" style="text-align: center;">
+    <div class="news">
+
+    </div>
 </div>
 
 

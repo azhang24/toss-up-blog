@@ -23,4 +23,10 @@ export class NewsService {
 
     return this.http.get(url);
   }
+
+  searchForTrendingNews(query:string, country:string, category:string, source:string){
+    const url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&source=${source}&q=${query}&apiKey=${this.apiKey}`;
+
+    return this.http.get(url);
+  }
 }
