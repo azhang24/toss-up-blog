@@ -8,10 +8,16 @@
                 <p>{{blog.body}}</p>
             </div>
         </div>
-        <div class="six wide column" style="border-style: dashed; border-color: red; height: 400px;">
-            <h4 class="ui header">Trending US News</h4>
-            <div class="newsContainer" *ngFor="let news of newsArticles | slice:0:5; let i=index">
-                <p><span>{{i+1}}</span>. {{news.title}}</p>
+        <div class="six wide column">
+            <div class="topNews" style="height: 200px;">
+                <h4 class="ui header" style="text-align: center;">Top Headlines in the US</h4>
+                <div class="newsContainer" *ngFor="let news of newsArticles | slice:0:5; let i=index">
+                    <p><span>{{i+1}}</span>. {{news.title}}</p>
+                </div>
+            </div>
+            <div class="buttons" style="margin: auto; text-align: center;">
+                <button class="ui green button" routerLink="/trendingnews">Trending News</button>
+                <button class="ui blue button">All News</button>
             </div>
         </div>
     </div>

@@ -1,0 +1,109 @@
+<h2 class="ui header" style="margin-top: 10px; text-align: center;">Today's Trending News</h2>
+<div class="ui grid" id="searchContainer" style="text-align: center;">
+    <div class="two wide column"></div>
+    <div class="twelve wide column">
+        <div class="ui search" >
+            <div class="ui icon input" style="width: 1000px;">
+                <input class="prompt" type="text" placeholder="Search for Trending News">
+                <i class="search icon"></i>
+            </div>
+            <div class="results"></div>
+        </div>
+        <div class="options" style="display: flex; text-align: center;">
+            <div class="ui search selection dropdown" >
+                <input type="hidden" name="country">
+                <i class="dropdown icon"></i>
+                <div class="default text">Select Country</div>
+                <div class="menu">
+                    <div class="item" data-value="us">United States</div>
+                    <div class="item" data-value="ae">United Arab Emirates</div>
+                    <div class="item" data-value="ar">Argentina</div>
+                    <div class="item" data-value="at">Austria</div>
+                    <div class="item" data-value="au">Australia</div>
+                    <div class="item" data-value="be">Belgium</div>
+                    <div class="item" data-value="bg">Bulgaria</div>
+                    <div class="item" data-value="br">Brazil</div>
+                    <div class="item" data-value="ca">Canada</div>
+                    <div class="item" data-value="ch">Switzerland</div>
+                    <div class="item" data-value="cn">China</div>
+                    <div class="item" data-value="co">Colombia</div>
+                    <div class="item" data-value="cu">Cuba</div>
+                    <div class="item" data-value="cz">Czech Republic</div>
+                    <div class="item" data-value="de">Germany</div>
+                    <div class="item" data-value="eg">Egypt</div>
+                    <div class="item" data-value="fr">France</div>
+                    <div class="item" data-value="gb">United Kingdom</div>
+                    <div class="item" data-value="gr">Greece</div>
+                    <div class="item" data-value="hk">Hong Kong</div>
+                    <div class="item" data-value="hu">Hungary</div>
+                    <div class="item" data-value="id">Indonesia</div>
+                    <div class="item" data-value="ie">Ireland</div>
+                    <div class="item" data-value="il">Israel</div>
+                    <div class="item" data-value="in">India</div>
+                    <div class="item" data-value="it">Italy</div>
+                    <div class="item" data-value="jp">Japan</div>
+                    <div class="item" data-value="kr">South Korea</div>
+                    <div class="item" data-value="lt">Lithuania</div>
+                    <div class="item" data-value="lv">Latvia</div>
+                    <div class="item" data-value="ma">Morocco</div>
+                    <div class="item" data-value="mx">Mexico</div>
+                    <div class="item" data-value="my">Malaysia</div>
+                    <div class="item" data-value="ng">Nigeria</div>
+                    <div class="item" data-value="nl">Netherlands</div>
+                    <div class="item" data-value="no">Norway</div>
+                    <div class="item" data-value="nz">New Zealand</div>
+                    <div class="item" data-value="ph">Philippines</div>
+                    <div class="item" data-value="pl">Poland</div>
+                    <div class="item" data-value="pt">Portugal</div>
+                    <div class="item" data-value="ro">Romania</div>
+                    <div class="item" data-value="rs">Serbia</div>
+                    <div class="item" data-value="ru">Russia</div>
+                    <div class="item" data-value="sa">Saudi Arabia</div>
+                    <div class="item" data-value="se">Sweden</div>
+                    <div class="item" data-value="sg">Singapore</div>
+                    <div class="item" data-value="si">Slovenia</div>
+                    <div class="item" data-value="sk">Slovakia</div>
+                    <div class="item" data-value="th">Thailand</div>
+                    <div class="item" data-value="tr">Turkey</div>
+                    <div class="item" data-value="tw">Taiwan</div>
+                    <div class="item" data-value="ua">Ukraine</div>
+                    <div class="item" data-value="ve">Venezuela</div>
+                    <div class="item" data-value="za">South Africa</div>
+                    
+
+                </div>
+            </div>
+            <div class="ui selection dropdown">
+                <input type="hidden" name="category">
+                <i class="dropdown icon"></i>
+                <div class="default text">Select Category</div>
+                <div class="menu">
+                    <div class="item" data-value="0">General</div>
+                    <div class="item" data-value="1">Technology</div>
+                    <div class="item" data-value="2">Business</div>
+                    <div class="item" data-value="3">Sports</div>
+                    <div class="item" data-value="4">Entertainment</div>
+                    <div class="item" data-value="5">Health</div>
+                    <div class="item" data-value="6">Science</div>
+                </div>
+            </div>
+
+            <div class="ui search selection dropdown" >
+                <input type="hidden" name="source">
+                <i class="dropdown icon"></i>
+                <div class="default text">Select Source</div>
+                <div class="menu">
+                    <div class="item" *ngFor="let source of sources" attr.data-value="{{source.id}}">
+                        {{source.name}}
+                    </div>
+                </div>
+            </div>
+
+            <button class="ui primary button">Search</button>
+        </div>
+    </div>
+    <div class="two wide column"></div>
+    
+</div>
+
+

@@ -17,4 +17,10 @@ export class NewsService {
 
     return this.http.get(url);
   }
+
+  getAllSources(){
+    const url = `https://newsapi.org/v2/sources?apiKey=${this.apiKey}`;
+
+    return this.http.get(url);
+  }
 }
