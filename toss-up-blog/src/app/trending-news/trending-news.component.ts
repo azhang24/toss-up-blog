@@ -24,7 +24,6 @@ export class TrendingNewsComponent implements OnInit {
     $('.ui.selection.dropdown').dropdown();
     this.newsService.getAllSources().subscribe((res: any) => {
       this.sources = res.sources;
-      console.log(this.sources);
     });
   }
 
@@ -34,8 +33,18 @@ export class TrendingNewsComponent implements OnInit {
     let category = $('.ui.selection.dropdown.category').dropdown('get value');
     let source = $('.ui.search.selection.dropdown.source').dropdown('get value');
     
-    this.newsService.searchForTrendingNews(query, country, category, source).subscribe((res) => {
-      console.log(res);
+    this.newsService.searchForTrendingNews(query, country, category, source).subscribe((res: any) => {
+      const articles = res.articles;
+      this.trendingNews = articles.map((article) => {
+        return {
+          title: article.title,
+          source: article.source.name,
+          url: article.url,
+          author: article.author != null ? article.author : '',
+          publishedAt: new Date(article.publishedAt).toString()
+        }
+      })
+      console.log(this.trendingNews);
     })
 
   }

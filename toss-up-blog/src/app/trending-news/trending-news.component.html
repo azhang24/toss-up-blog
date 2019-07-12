@@ -1,9 +1,9 @@
 <h2 class="ui header" style="margin-top: 10px; text-align: center;">Today's Trending News</h2>
-<div class="ui grid" id="searchContainer" style="text-align: center;">
+<div class="ui grid" id="searchContainer" style="">
     <div class="two wide column"></div>
     <div class="twelve wide column">
         <div class="ui search" >
-            <div class="ui icon input" style="width: 1200px;">
+            <div class="ui icon input" style="width: 1000px;">
                 <input class="prompt" type="text" id="query" placeholder="Search for Trending News">
                 <i class="search icon"></i>
             </div>
@@ -15,6 +15,7 @@
                 <i class="dropdown icon"></i>
                 <div class="default text">Select Country</div>
                 <div class="menu">
+                    <div class="item" data-value=""></div>
                     <div class="item" data-value="us">United States</div>
                     <div class="item" data-value="ae">United Arab Emirates</div>
                     <div class="item" data-value="ar">Argentina</div>
@@ -101,15 +102,21 @@
 
             <button class="ui primary button" (click)="searchForTrendingNews()">Search</button>
         </div>
+
+        <div class="newsArticles">
+            <div class="newsArticle" *ngFor="let news of trendingNews">
+                <a href="{{news.url}}">{{news.title}}</a>
+                <p><b>Source:</b> {{news.source}}</p>
+                <p><b>Published On:</b> {{news.publishedAt}}</p>
+                <p><b>Written By:</b> {{news.author}}</p>
+                <br>
+            </div>
+            
+        </div>
     </div>
     <div class="two wide column"></div>
     
 </div>
 
-<div class="ui grid" id="newsContainer" style="text-align: center;">
-    <div class="news">
-
-    </div>
-</div>
 
 

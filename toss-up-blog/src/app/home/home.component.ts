@@ -96,7 +96,9 @@ export class HomeComponent implements OnInit {
         this.newsArticles.push({
           title: article.title,
           source: article.source.name,
-          url: article.url
+          url: article.url,
+          author: article.author,
+          publishedAt: new Date(article.publishedAt).toString()
         });
       }
     })
