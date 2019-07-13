@@ -1,22 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { FlatpickrModule } from 'angularx-flatpickr';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TrendingNewsComponent } from './trending-news/trending-news.component';
+import { AllNewsComponent } from './all-news/all-news.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    TrendingNewsComponent
+    TrendingNewsComponent,
+    AllNewsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FlatpickrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

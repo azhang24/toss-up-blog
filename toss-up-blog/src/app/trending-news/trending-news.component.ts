@@ -22,6 +22,7 @@ export class TrendingNewsComponent implements OnInit {
 
   ngOnInit() {
     $('.ui.selection.dropdown').dropdown();
+    $('.ui.fluid.search.dropdown').dropdown();
     this.newsService.getAllSources().subscribe((res: any) => {
       this.sources = res.sources;
     });
@@ -31,7 +32,7 @@ export class TrendingNewsComponent implements OnInit {
     let query = (<HTMLInputElement>document.getElementById('query')).value;
     let country = $('.ui.search.selection.dropdown.country').dropdown('get value');
     let category = $('.ui.selection.dropdown.category').dropdown('get value');
-    let source = $('.ui.search.selection.dropdown.source').dropdown('get value');
+    let source = $('.ui.fluid.search.dropdown').dropdown('get value');
     
     this.newsService.searchForTrendingNews(query, country, category, source).subscribe((res: any) => {
       const articles = res.articles;

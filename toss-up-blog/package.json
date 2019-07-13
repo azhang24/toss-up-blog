@@ -19,6 +19,8 @@
     "@angular/platform-browser": "~8.0.3",
     "@angular/platform-browser-dynamic": "~8.0.3",
     "@angular/router": "~8.0.3",
+    "angularx-flatpickr": "^6.1.0",
+    "flatpickr": "^4.6.1",
     "fomantic-ui": "^2.7.6",
     "jquery": "^3.4.1",
     "rxjs": "~6.4.0",

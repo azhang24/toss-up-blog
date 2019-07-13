@@ -2,7 +2,7 @@
 <div class="ui grid" id="searchContainer">
     <div class="two wide column"></div>
     <div class="twelve wide column">
-        <div class="ui search" >
+        <div class="ui search">
             <div class="ui icon input" style="width: 1000px;">
                 <input class="prompt" type="text" id="query" placeholder="Search for Trending News">
                 <i class="search icon"></i>
@@ -89,7 +89,7 @@
                 </div>
             </div>
 
-            <div class="ui search selection dropdown source" >
+            <!-- <div class="ui search selection dropdown source" >
                 <input type="hidden" name="source">
                 <i class="dropdown icon"></i>
                 <div class="default text">Select Source</div>
@@ -98,7 +98,12 @@
                         {{source.name}}
                     </div>
                 </div>
-            </div>
+            </div> -->
+
+            <select class="ui fluid search dropdown" multiple="">
+                <option value="">Select Sources</option>
+                <option *ngFor="let source of sources" attr.value="{{source.id}}">{{source.name}}</option>
+            </select>
 
             <button class="ui primary button" (click)="searchForTrendingNews()">Search</button>
         </div>
@@ -125,6 +130,7 @@
     <div class="two wide column"></div>
     
 </div>
+<footer>Powered by NewsAPI.org</footer>
 
 
 

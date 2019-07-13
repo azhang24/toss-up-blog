@@ -25,8 +25,24 @@ export class NewsService {
   }
 
   searchForTrendingNews(query:string, country:string, category:string, source:string){
+
+    query = encodeURIComponent(query);
+
     const url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&source=${source}&q=${query}&apiKey=${this.apiKey}`;
 
     return this.http.get(url);
+  }
+
+  searchForAllNews(query:string, from:string, to:string, language:string, sortBy:string, sources:string, domain:string, excludeDomain:string){
+
+    query = encodeURIComponent(query);
+
+    const url = `https://newsapi.org/v2/everything?q=${query}&sources=${sources}` +
+                `&domains=${domain}&excludeDomains=${excludeDomain}&from=${from}&to=${to}` +
+                `&language=${language}&sortBy=${sortBy}&apiKey=${this.apiKey}`;
+
+    return this.http.get(url);
+
+
   }
 }
