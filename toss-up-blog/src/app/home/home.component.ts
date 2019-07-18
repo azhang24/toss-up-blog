@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
     //temporary
     this.blogs = [
       {
+        id: 1,
         title: 'Kawhi Leonard decision reportedly down to the Lakers or Raptors',
         body: 'As several key players chose their new destinations for 2019 and beyond ' 
               + 'in the first two days of NBA free agency, 2019 NBA Finals MVP Kawhi Leonard ' 
@@ -39,9 +40,11 @@ export class HomeComponent implements OnInit {
               + '24-year history after bringing them the championship they sought after years of playoff heartbreak. '
               + 'He does not owe, if thats the right term, the Raptors franchise anything even if he joins the Lakers '
               + 'to form another superteam. Come later tonight or this week, Leonard\'s decision will impact '
-              + 'the landscape of the league for the next three or four years.'
+              + 'the landscape of the league for the next three or four years.',
+      newsID: 1
       },
       {
+        id: 2,
         title: 'Awake: The Million Dollar Game showcases a fascinating concept but could use some tinkering.',
         body: 'I\'ll admit it. I\'m not a TV show guy, but this summer I\'ve been watching more netflix than '
               + 'usual. Usually I open the app on my phone or laptop just to see what new or old shows might be '
@@ -77,7 +80,8 @@ export class HomeComponent implements OnInit {
               + 'intuitive as a simple tiebreaker and it would only leave all the remaining contestants further sleep-deprived.' 
               + 'I\'m not sure this has already been included, but during the quarter counting they can serve contestants with bigger meals '
               + 'rather than some lightweight snacks or energy bars. At the same time, eating heavier meals during the day can put '
-              + 'people to sleep, especially during lunch. '
+              + 'people to sleep, especially during lunch. ',
+        newsID: 2
       }
     ]
     

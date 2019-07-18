@@ -42,7 +42,5 @@ export class NewsService {
                 `&language=${language}&sortBy=${sortBy}&apiKey=${this.apiKey}`;
 
     return this.http.get(url);
-
-
   }
 }
