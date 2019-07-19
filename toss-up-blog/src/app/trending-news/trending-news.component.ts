@@ -42,12 +42,22 @@ export class TrendingNewsComponent implements OnInit {
           source: article.source.name,
           url: article.url,
           author: article.author != null ? article.author : '',
-          publishedAt: new Date(article.publishedAt).toString()
+          publishedAt: new Date(article.publishedAt).toString(),
+          id: this.urlToId(article.url)
         }
       })
       console.log(this.trendingNews);
     })
 
+  }
+
+  urlToId(url: string){
+    let id = "";
+    for(let i = 0; i < url.length; i++){
+      let parsedChar = url.charAt(i).charCodeAt(0)
+      id += parsedChar.toString(16)
+    }
+    return id;
   }
 
 }
