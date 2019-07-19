@@ -2,7 +2,7 @@
     padding: 20px 20px 20px 20px;
 }
 
-#blogsHeader{
+#newsHeader, #blogsHeader{
     text-decoration: underline;
 }
 
