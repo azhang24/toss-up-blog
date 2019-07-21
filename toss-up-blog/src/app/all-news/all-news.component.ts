@@ -48,20 +48,10 @@ export class AllNewsComponent implements OnInit {
               url: article.url,
               author: article.author != null ? article.author : '',
               publishedAt: new Date(article.publishedAt).toString(),
-              id: this.urlToId(article.url)
+              id: this.newsService.urlToId(article.url)
             }
           })
           console.log(this.allNews);
         })
   }
-
-  urlToId(url: string){
-    let id = "";
-    for(let i = 0; i < url.length; i++){
-      let parsedChar = url.charAt(i).charCodeAt(0)
-      id += parsedChar.toString(16)
-    }
-    return id;
-  }
-
 }

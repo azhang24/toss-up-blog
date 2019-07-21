@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
               + 'He does not owe, if thats the right term, the Raptors franchise anything even if he joins the Lakers '
               + 'to form another superteam. Come later tonight or this week, Leonard\'s decision will impact '
               + 'the landscape of the league for the next three or four years.',
-      newsID: 1
+      newsID: "0"
       },
       {
         id: 2,
@@ -81,7 +81,7 @@ export class HomeComponent implements OnInit {
               + 'I\'m not sure this has already been included, but during the quarter counting they can serve contestants with bigger meals '
               + 'rather than some lightweight snacks or energy bars. At the same time, eating heavier meals during the day can put '
               + 'people to sleep, especially during lunch. ',
-        newsID: 2
+        newsID: "2"
       }
     ]
     
@@ -103,19 +103,9 @@ export class HomeComponent implements OnInit {
           url: article.url,
           author: article.author,
           publishedAt: new Date(article.publishedAt).toString(),
-          id: this.urlToId(article.url)
+          id: this.newsService.urlToId(article.url)
         });
       }
     })
   }
-
-  urlToId(url: string){
-    let id = "";
-    for(let i = 0; i < url.length; i++){
-      let parsedChar = url.charAt(i).charCodeAt(0)
-      id += parsedChar.toString(16)
-    }
-    return id;
-  }
-
 }

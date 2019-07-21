@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { TrendingNewsComponent } from './trending-news/trending-news.component';
 import { AllNewsComponent } from './all-news/all-news.component';
+import { AddBlogComponent } from './add-blog/add-blog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     TrendingNewsComponent,
-    AllNewsComponent
+    AllNewsComponent,
+    AddBlogComponent
   ],
   imports: [
     BrowserModule,
