@@ -114,7 +114,7 @@
                 <p><b>Published On:</b> {{news.publishedAt}}</p>
                 <p><b>Written By:</b> {{news.author}}</p>
                 <div class="buttons" style="display: flex;">
-                    <button class="ui primary button" routerLink="/addblog/{{news.id}}">
+                    <button class="ui primary button" (click)="navigateToAddBlog(news)">
                         Write about this
                     </button>
                     <button class="ui secondary button">

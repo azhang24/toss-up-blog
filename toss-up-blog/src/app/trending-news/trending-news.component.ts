@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { News } from '../models/news';
 import { NewsService } from '../services/news.service';
 import * as jQuery from 'jquery';
+import { Router } from '@angular/router';
 declare var $: any;
 
 @Component({
@@ -15,7 +16,7 @@ export class TrendingNewsComponent implements OnInit {
 
   sources: any[];
 
-  constructor(private newsService: NewsService) {
+  constructor(private newsService: NewsService, private router: Router) {
     this.trendingNews = [];
     this.sources = [];
   }
@@ -48,5 +49,9 @@ export class TrendingNewsComponent implements OnInit {
       })
       console.log(this.trendingNews);
     })
+  }
+
+  navigateToAddBlog(news: News){
+    this.router.navigateByUrl('/addblog', { state: news})
   }
 }

@@ -9,7 +9,7 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'trendingnews', component: TrendingNewsComponent},
   {path: 'allnews', component: AllNewsComponent},
-  {path: 'addblog/:id', component: AddBlogComponent},
+  {path: 'addblog', component: AddBlogComponent},
   {path: '', redirectTo: '/', pathMatch: 'full'}
 ];
 
