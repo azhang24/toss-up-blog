@@ -48,7 +48,7 @@ export class AllNewsComponent implements OnInit {
               url: article.url,
               author: article.author != null ? article.author : '',
               publishedAt: new Date(article.publishedAt).toString(),
-              id: this.newsService.urlToId(article.url)
+              id: this.newsService.generateId(article.url)
             }
           })
           console.log(this.allNews);

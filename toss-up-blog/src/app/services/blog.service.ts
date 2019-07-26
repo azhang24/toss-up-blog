@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Blog } from '../models/blog';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,10 @@ export class BlogService {
 
   getBlogs(){
     return this.http.get(this.apiUrl)
+  }
+
+  addBlog(blog: Blog){
+    return this.http.post(this.apiUrl, blog)
   }
 
 }

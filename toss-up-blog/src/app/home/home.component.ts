@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
           url: article.url,
           author: article.author,
           publishedAt: new Date(article.publishedAt).toString(),
-          id: this.newsService.urlToId(article.url)
+          id: this.newsService.generateId(article.url)
         });
       }
     })

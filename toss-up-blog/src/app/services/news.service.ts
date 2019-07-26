@@ -11,12 +11,13 @@ export class NewsService {
 
   private apiKey = encodeURIComponent('1b1b14f0e9da43378e5e0672bf0621f9');
 
-  urlToId(url: string){
+  generateId(url: string){
     let id = "";
     for(let i = 0; i < url.length; i++){
-      let parsedChar = url.charAt(i).charCodeAt(0) 
+      let parsedChar = url.charAt(i).charCodeAt(0)
       id += parsedChar.toString(16)
     }
+    id = id.substring(0, 24)
     return id;
   }
 

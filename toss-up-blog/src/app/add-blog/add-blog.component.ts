@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { News } from '../models/news';
+import { BlogService } from '../services/blog.service';
 
 @Component({
   selector: 'app-add-blog',
@@ -12,7 +13,7 @@ export class AddBlogComponent implements OnInit {
 
   newsArticle: News;
 
-  constructor() { }
+  constructor(private blogService: BlogService) { }
 
   ngOnInit() {
     delete window.history.state.navigationId;
