@@ -15,6 +15,10 @@ export class BlogService {
     return this.http.get(this.apiUrl)
   }
 
+  getBlogByNewsID(newsID: string){
+    return this.http.get(`${this.apiUrl}/news/${newsID}`)
+  }
+
   addBlog(blog: Blog){
     return this.http.post(this.apiUrl, blog)
   }

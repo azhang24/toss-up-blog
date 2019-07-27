@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { News } from '../models/news';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NewsService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   private apiKey = encodeURIComponent('1b1b14f0e9da43378e5e0672bf0621f9');
 
@@ -17,7 +19,9 @@ export class NewsService {
       let parsedChar = url.charAt(i).charCodeAt(0)
       id += parsedChar.toString(16)
     }
-    id = id.substring(0, 24)
+    if(id.length >= 24){
+      id = id.substring(id.length - 24, id.length)
+    }
     return id;
   }
 
@@ -53,4 +57,9 @@ export class NewsService {
 
     return this.http.get(url);
   }
+
+  navigateTo(location: string, news: News){
+    this.router.navigateByUrl('/' + location + '/' + news.id, { state: news })
+  }
+
 }

@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { TrendingNewsComponent } from './trending-news/trending-news.component';
 import { AllNewsComponent } from './all-news/all-news.component';
 import { AddBlogComponent } from './add-blog/add-blog.component';
+import { ShowBlogsComponent } from './show-blogs/show-blogs.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AddBlogComponent } from './add-blog/add-blog.component';
     HomeComponent,
     TrendingNewsComponent,
     AllNewsComponent,
-    AddBlogComponent
+    AddBlogComponent,
+    ShowBlogsComponent
   ],
   imports: [
     BrowserModule,

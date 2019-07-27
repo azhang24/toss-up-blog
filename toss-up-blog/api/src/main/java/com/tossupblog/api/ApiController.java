@@ -38,6 +38,13 @@ public class ApiController{
         return apiRepository.findById(objid);
     }
 
+    @GetMapping("/api/blogs/news/{newsID}")
+    public Blog[] getBlogByNewsId(@PathVariable String newsID, HttpServletResponse res){
+        res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+
+        return apiRepository.findBynewsID(newsID);
+    }
+
     @PostMapping("/api/blogs")
     public Blog createBlog(@RequestBody Map<String, String> body, HttpServletResponse res){
         res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
