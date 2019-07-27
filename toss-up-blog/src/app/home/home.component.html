@@ -9,7 +9,7 @@
             </div>
             <div class="topNews" style="height: 200px;">
                 <h3 class="ui header" id="newsHeader">Top Headlines in the US</h3>
-                <div class="newsContainer" *ngFor="let news of newsArticles | slice:0:5; let i=index">
+                <div class="newsContainer" *ngFor="let news of newsArticles | slice:0:10; let i=index">
                     <p><span>{{i+1}}</span>. {{news.title}}</p>
                 </div>
             </div>

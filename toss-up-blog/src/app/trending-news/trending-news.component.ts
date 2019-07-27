@@ -52,6 +52,6 @@ export class TrendingNewsComponent implements OnInit {
   }
 
   navigateToAddBlog(news: News){
-    this.router.navigateByUrl('/addblog', { state: news})
+    this.router.navigateByUrl('/addblog/'+news.id, { state: news })
   }
 }
