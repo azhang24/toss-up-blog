@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Date;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -59,9 +60,10 @@ public class ApiController{
 
         String title = body.get("title");
         String bdy = body.get("body");
-        String newsID= body.get("newsID");
+        Date publicationDate = new Date();
+        String newsID = body.get("newsID");
 
-        return apiRepository.save(new Blog(id, title, bdy, newsID));
+        return apiRepository.save(new Blog(id, title, bdy, publicationDate, newsID));
     }
 
     @PutMapping("/api/blogs/{id}")

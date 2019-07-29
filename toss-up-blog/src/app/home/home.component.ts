@@ -30,12 +30,14 @@ export class HomeComponent implements OnInit {
   }
 
   getBlogs(){
-    this.blogService.getBlogs().subscribe((res: any) => {
+    this.blogService.getBlogs().subscribe((res: Blog[]) => {
       for(let i = 0; i < res.length; i++){
+        console.log(res[i].publicationDate.toString())
         this.blogs.push({
           id: this.createObjectId(res[i].id),
           title: res[i].title,
           body: res[i].body,
+          publicationDate: res[i].publicationDate,
           newsID: res[i].newsID
         })
       }

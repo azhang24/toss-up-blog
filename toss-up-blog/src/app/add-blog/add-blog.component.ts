@@ -30,8 +30,11 @@ export class AddBlogComponent implements OnInit {
       id: null,
       title: blogTitle,
       body: blogBody,
+      publicationDate: new Date(),
       newsID: this.newsArticle.id
     }
+
+    console.log(blogToAdd.publicationDate)
     
     this.blogService.addBlog(blogToAdd).subscribe((res: any) => {
       console.log(res)

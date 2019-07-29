@@ -19,6 +19,7 @@
             <h3 class="ui header" id="blogsHeader">Your Blogs</h3>
             <div class="blogsContainer" *ngFor="let blog of blogs">
                 <p><b>{{blog.title}}</b></p>
+                <p>Published On: {{blog.publicationDate}}</p>
                 <p>{{blog.body}}</p>
                 <br>
             </div>
