@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Map;
+import java.text.ParseException;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletResponse;
@@ -47,7 +48,7 @@ public class ApiController{
     }
 
     @PostMapping("/api/blogs")
-    public Blog createBlog(@RequestBody Map<String, String> body, HttpServletResponse res){
+    public Blog createBlog(@RequestBody Map<String, String> body, HttpServletResponse res) throws ParseException{
         res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
 
         ObjectId id;
@@ -60,7 +61,7 @@ public class ApiController{
 
         String title = body.get("title");
         String bdy = body.get("body");
-        Date publicationDate = new Date();
+        String publicationDate = (new Date()).toString();
         String newsID = body.get("newsID");
 
         return apiRepository.save(new Blog(id, title, bdy, publicationDate, newsID));

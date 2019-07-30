@@ -2,8 +2,6 @@ package com.tossupblog.api;
 
 import org.springframework.data.annotation.Id;
 
-import java.util.Date;
-
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -14,14 +12,14 @@ public class Blog{
     private ObjectId id;
     private String title;
     private String body;
-    private Date publicationDate;
+    private String publicationDate;
     private String newsID;
 
     public Blog(){
 
     }
 
-    public Blog(ObjectId id, String title, String body, Date publicationDate, String newsID){
+    public Blog(ObjectId id, String title, String body, String publicationDate, String newsID){
         this.setID(id);
         this.setTitle(title);
         this.setBody(body);
@@ -53,11 +51,11 @@ public class Blog{
         this.body = body;
     }
 
-    public Date getPublicationDate(){
+    public String getPublicationDate(){
         return this.publicationDate;
     }
 
-    public void setPublicationDate(Date publicationDate){
+    public void setPublicationDate(String publicationDate){
         this.publicationDate = publicationDate;
     }
 

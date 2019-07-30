@@ -4,6 +4,7 @@ import { News } from '../models/news';
 import { BlogService } from '../services/blog.service';
 import { NewsService } from '../services/news.service';
 import { HttpResponse } from '@angular/common/http';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-home',
@@ -32,7 +33,6 @@ export class HomeComponent implements OnInit {
   getBlogs(){
     this.blogService.getBlogs().subscribe((res: Blog[]) => {
       for(let i = 0; i < res.length; i++){
-        console.log(res[i].publicationDate.toString())
         this.blogs.push({
           id: this.createObjectId(res[i].id),
           title: res[i].title,
