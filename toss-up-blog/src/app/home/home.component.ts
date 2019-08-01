@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
     this.blogService.getBlogs().subscribe((res: Blog[]) => {
       for(let i = 0; i < res.length; i++){
         this.blogs.push({
-          id: this.createObjectId(res[i].id),
+          id: this.blogService.createObjectId(res[i].id),
           title: res[i].title,
           body: res[i].body,
           publicationDate: res[i].publicationDate,
@@ -61,17 +61,9 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  createObjectId(id: any){
-    let timestamp = id.timestamp.toString(16);
-    let machineid = id.machineIdentifier.toString(16);
-    let processid = id.processIdentifier.toString(16);
-    if(processid.length < 4){
-      let leadingzeros = '0'.repeat(4 - processid.length)
-      processid = leadingzeros + processid
-    }
-    let counter = id.counter.toString(16);
-    let objId = timestamp + machineid + processid + counter + "";
-    return objId;
+  deleteBlog(blog: Blog){
+    this.blogs = this.blogs.filter(blogPost => blogPost != blog)
+    this.blogService.deleteBlog(blog).subscribe();
   }
   
 }

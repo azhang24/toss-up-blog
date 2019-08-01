@@ -24,10 +24,22 @@ export class ShowBlogsComponent implements OnInit {
   }
 
   getBlogs(){
-    this.blogService.getBlogByNewsID(this.newsArticle.id).subscribe((res: any) => {
-      console.log(res)
-      this.blogs = res;
+    this.blogService.getBlogByNewsID(this.newsArticle.id).subscribe((res: Blog[]) => {
+      for(let i = 0; i < res.length; i++){
+        this.blogs.push({
+          id: this.blogService.createObjectId(res[i].id),
+          title: res[i].title,
+          body: res[i].body,
+          publicationDate: res[i].publicationDate,
+          newsID: res[i].newsID
+        })
+      }
     })
+  }
+  
+  deleteBlog(blog: Blog){
+    this.blogs = this.blogs.filter(blogPost => blogPost != blog)
+    this.blogService.deleteBlog(blog).subscribe();
   }
 
 }
