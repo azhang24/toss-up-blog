@@ -10,6 +10,7 @@ import { TrendingNewsComponent } from './trending-news/trending-news.component';
 import { AllNewsComponent } from './all-news/all-news.component';
 import { AddBlogComponent } from './add-blog/add-blog.component';
 import { ShowBlogsComponent } from './show-blogs/show-blogs.component';
+import { EditBlogComponent } from './edit-blog/edit-blog.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ShowBlogsComponent } from './show-blogs/show-blogs.component';
     TrendingNewsComponent,
     AllNewsComponent,
     AddBlogComponent,
-    ShowBlogsComponent
+    ShowBlogsComponent,
+    EditBlogComponent
   ],
   imports: [
     BrowserModule,

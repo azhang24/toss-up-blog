@@ -13,17 +13,19 @@ public class Blog{
     private String title;
     private String body;
     private String publicationDate;
+    private String updateDate;
     private String newsID;
 
     public Blog(){
 
     }
 
-    public Blog(ObjectId id, String title, String body, String publicationDate, String newsID){
+    public Blog(ObjectId id, String title, String body, String publicationDate, String updateDate, String newsID){
         this.setID(id);
         this.setTitle(title);
         this.setBody(body);
         this.setPublicationDate(publicationDate);
+        this.setUpdateDate(updateDate);
         this.setNewsID(newsID);
     }
 
@@ -57,6 +59,14 @@ public class Blog{
 
     public void setPublicationDate(String publicationDate){
         this.publicationDate = publicationDate;
+    }
+
+    public String getUpdateDate(){
+        return this.updateDate;
+    }
+
+    public void setUpdateDate(String updateDate){
+        this.updateDate = updateDate;
     }
 
     public String getNewsID(){

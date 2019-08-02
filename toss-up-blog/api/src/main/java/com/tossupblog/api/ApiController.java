@@ -62,9 +62,10 @@ public class ApiController{
         String title = body.get("title");
         String bdy = body.get("body");
         String publicationDate = (new Date()).toString();
+        String updateDate = publicationDate;
         String newsID = body.get("newsID");
 
-        return apiRepository.save(new Blog(id, title, bdy, publicationDate, newsID));
+        return apiRepository.save(new Blog(id, title, bdy, publicationDate, updateDate, newsID));
     }
 
     @PutMapping("/api/blogs/{id}")
@@ -74,12 +75,14 @@ public class ApiController{
         String title = body.get("title");
         String bdy = body.get("body");
         String newsID = body.get("newsID");
+        String updateDate = (new Date()).toString();
 
         Blog blogToUpdate = this.getBlogById(id, res);
 
         blogToUpdate.setTitle(title);
         blogToUpdate.setBody(bdy);
         blogToUpdate.setNewsID(newsID);
+        blogToUpdate.setUpdateDate(updateDate);
 
         return apiRepository.save(blogToUpdate);
     }

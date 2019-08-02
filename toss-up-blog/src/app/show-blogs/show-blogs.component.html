@@ -5,7 +5,10 @@
     <div class="blogsContainer" *ngFor="let blog of blogs">
         <p><b>{{blog.title}}</b></p>
         <p>{{blog.body}}</p>
-        <button class="negative ui button" (click)="this.deleteBlog(blog)">Delete Blog</button>
+        <div class="buttons" style="display: inline-block;">
+            <button class="ui button" routerLink="/editblog/{{blog.id}}">Edit Blog</button>
+            <button class="negative ui button" (click)="deleteBlog(blog)">Delete Blog</button>
+        </div>
         <br>
     </div>
 </div>

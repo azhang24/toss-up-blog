@@ -31,6 +31,7 @@ export class AddBlogComponent implements OnInit {
       title: blogTitle,
       body: blogBody,
       publicationDate: new Date(),
+      updateDate: new Date(),
       newsID: this.newsArticle.id
     }
 

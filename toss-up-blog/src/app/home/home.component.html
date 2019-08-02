@@ -20,8 +20,13 @@
             <div class="blogsContainer" *ngFor="let blog of blogs">
                 <p><b>{{blog.title}}</b></p>
                 <p>Published On: {{blog.publicationDate}}</p>
+                <p *ngIf="blog.publicationDate !== blog.updateDate">Updated On: {{blog.updateDate}}</p>
                 <p>{{blog.body}}</p>
-                <button class="negative ui button" (click)="deleteBlog(blog)">Delete Blog</button>
+                <div class="buttons" style="display: inline-block;">
+                    <button class="ui button" routerLink="/editblog/{{blog.id}}">Edit Blog</button>
+                    <button class="negative ui button" (click)="deleteBlog(blog)">Delete Blog</button>
+                </div>
+                
                 <br>
             </div>
             

@@ -3,5 +3,6 @@ export class Blog {
     title: string;
     body: string;
     publicationDate: Date;
+    updateDate: Date;
     newsID: string | number;
 }

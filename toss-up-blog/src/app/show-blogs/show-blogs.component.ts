@@ -31,6 +31,7 @@ export class ShowBlogsComponent implements OnInit {
           title: res[i].title,
           body: res[i].body,
           publicationDate: res[i].publicationDate,
+          updateDate: res[i].updateDate,
           newsID: res[i].newsID
         })
       }

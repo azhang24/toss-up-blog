@@ -1,0 +1,20 @@
+<div class="container" style="margin-top: 10px; margin-left: 20px;">
+    <h2 class="ui header">Edit Blog</h2>
+    <br>
+    <p *ngIf="loading">Loading..</p>
+    <div class="ui form" *ngIf="!loading">
+        <div class="field">
+            <label>Blog Title: </label>
+            <input type="text" value="{{blogToEdit.title}}" id="blogTitle">
+        </div>
+        <div class="field">
+            <label>Blog Body: </label>
+            <textarea value="{{blogToEdit.body}}" id="blogBody"
+            style="white-space: pre-wrap" autofocus onfocus="this.blogBody = this.blogBody"></textarea>
+        </div>
+        <button class="ui button" type="submit" (click)="updateBlog()">Update Blog</button>
+
+    </div>
+    
+
+</div>

@@ -28,12 +28,21 @@ export class BlogService {
     return this.http.get(this.apiUrl)
   }
 
+  getBlogByID(blogID: string){
+    return this.http.get(`${this.apiUrl}/${blogID}`)
+  }
+
   getBlogByNewsID(newsID: string){
     return this.http.get(`${this.apiUrl}/news/${newsID}`)
   }
 
   addBlog(blog: Blog){
     return this.http.post(this.apiUrl, blog)
+  }
+
+  updateBlog(blog: Blog){
+    console.log(blog.id)
+    return this.http.put(`${this.apiUrl}/${blog.id}`, blog);
   }
 
   deleteBlog(blog: Blog){
