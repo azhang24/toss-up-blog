@@ -35,6 +35,8 @@ export class ShowBlogsComponent implements OnInit {
           newsID: res[i].newsID
         })
       }
+      
+      this.blogs = this.blogs.reverse();
     })
   }
   

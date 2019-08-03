@@ -42,6 +42,7 @@ export class HomeComponent implements OnInit {
           newsID: res[i].newsID
         })
       }
+      this.blogs = this.blogs.reverse()
 
     })
   }
