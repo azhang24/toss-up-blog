@@ -3,8 +3,7 @@ import { Blog } from '../models/blog';
 import { News } from '../models/news';
 import { BlogService } from '../services/blog.service';
 import { NewsService } from '../services/news.service';
-import { HttpResponse } from '@angular/common/http';
-import * as moment from 'moment';
+declare var $: any;
 
 @Component({
   selector: 'app-home',
@@ -28,6 +27,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.getBlogs();
     this.getUSNews();
+    $('.ui.dropdown').dropdown();
   }
 
   getBlogs(){
@@ -38,13 +38,26 @@ export class HomeComponent implements OnInit {
           title: res[i].title,
           body: res[i].body,
           publicationDate: res[i].publicationDate,
-          updateDate: res[i].updateDate,
+          updateDate: res[i].updateDate !== null ? res[i].updateDate : res[i].publicationDate,
           newsID: res[i].newsID
         })
       }
       this.blogs = this.blogs.reverse()
 
     })
+  }
+
+  sortBlogs(option){
+    console.log(this.blogs)
+    if(option === "oldest"){
+      this.blogs.sort((blog1, blog2) => 
+        Date.parse(blog1.updateDate.toString()) - Date.parse(blog2.updateDate.toString()))
+      console.log(this.blogs)
+    }
+    else if(option === "recent"){
+      this.blogs.sort((blog1, blog2) => 
+        Date.parse(blog2.updateDate.toString()) - Date.parse(blog1.updateDate.toString()))
+    }
   }
 
   getUSNews(){
