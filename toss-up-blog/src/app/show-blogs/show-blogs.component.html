@@ -4,7 +4,10 @@
     <h3 class="ui header" id="blogsHeader" style="text-decoration: underline">Your Blogs</h3>
     <div class="blogsContainer" *ngFor="let blog of blogs">
         <p><b>{{blog.title}}</b></p>
-        <p>{{blog.body}}</p>
+        <div class="blogBody" *ngFor="let paragraph of blog.paragraphs">
+            <p>{{paragraph}}</p>
+            <p></p>
+        </div>
         <div class="buttons" style="display: inline-block;">
             <button class="ui button" routerLink="/editblog/{{blog.id}}">Edit Blog</button>
             <button class="negative ui button" (click)="deleteBlog(blog)">Delete Blog</button>

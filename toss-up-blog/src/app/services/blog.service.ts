@@ -37,11 +37,12 @@ export class BlogService {
   }
 
   addBlog(blog: Blog){
+    delete blog.paragraphs;
     return this.http.post(this.apiUrl, blog)
   }
 
   updateBlog(blog: Blog){
-    console.log(blog.id)
+    delete blog.paragraphs;
     return this.http.put(`${this.apiUrl}/${blog.id}`, blog);
   }
 

@@ -22,15 +22,19 @@
                 <option value="oldest">Oldest</option>
             </select>
             <div class="blogsContainer" *ngFor="let blog of blogs">
-                <p><b>{{blog.title}}</b></p>
+                <p style="font-size: 16px;"><b>{{blog.title}}</b></p>
                 <p>Published On: {{blog.publicationDate}}</p>
                 <p *ngIf="blog.publicationDate !== blog.updateDate">Updated On: {{blog.updateDate}}</p>
-                <p>{{blog.body}}</p>
+                <div class="blogBody" *ngFor="let paragraph of blog.paragraphs">
+                    <p>{{paragraph}}</p>
+                    <p></p>
+                </div>
                 <div class="buttons" style="display: inline-block;">
                     <button class="ui button" routerLink="/editblog/{{blog.id}}">Edit Blog</button>
                     <button class="negative ui button" (click)="deleteBlog(blog)">Delete Blog</button>
                 </div>
                 
+                <br>
                 <br>
             </div>
             

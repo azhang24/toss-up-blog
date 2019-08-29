@@ -30,6 +30,7 @@ export class AddBlogComponent implements OnInit {
       id: null,
       title: blogTitle,
       body: blogBody,
+      paragraphs: blogBody.split('\n'),
       publicationDate: new Date(),
       updateDate: new Date(),
       newsID: this.newsArticle.id

@@ -40,6 +40,7 @@ export class EditBlogComponent implements OnInit {
       ...this.blogToEdit,
       title: blogTitle,
       body: blogBody,
+      paragraphs: blogBody.split('\n'),
       updateDate: new Date()
     };
 

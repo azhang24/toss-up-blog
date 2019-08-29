@@ -37,6 +37,7 @@ export class HomeComponent implements OnInit {
           id: this.blogService.createObjectId(res[i].id),
           title: res[i].title,
           body: res[i].body,
+          paragraphs: res[i].body.split('\n').filter((paragraph) => paragraph.length > 0),
           publicationDate: res[i].publicationDate,
           updateDate: res[i].updateDate !== null ? res[i].updateDate : res[i].publicationDate,
           newsID: res[i].newsID
